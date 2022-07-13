@@ -15,6 +15,7 @@ const DemoRoute = require('./routes/demoroute')
 const CategoryRoute = require('./routes/categoryRoute')
 const ProductRoute = require('./routes/productRoute')
 const UserRoute = require('./routes/userRoute')
+const OrderRoute = require('./routes/orderRoute')
 
 app.use(bodyparser.json())
 app.use(morgan('dev'))
@@ -25,6 +26,9 @@ app.use('/api',DemoRoute)
 app.use('/api', CategoryRoute)
 app.use('/api',ProductRoute)
 app.use('/api', UserRoute)
+app.use('/api',OrderRoute)
+
+app.use('/public/uploads',express.static('/public/uploads'))
 // app.use(DemoRoute)
 
 
