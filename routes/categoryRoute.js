@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.post('/addcategory', categoryCheck, validation, requireSignin,addCategory)
 router.get('/viewCategories',viewCategories)
-router.put('/updatecategory/:id', requireSignin,updateCategory)
+router.put('/updatecategory/:id', categoryCheck, validation, requireSignin,updateCategory)
 router.delete('/deletecategory/:id', requireSignin, deleteCategory)
 router.get('/findcategory/:id',findCategory)
 
